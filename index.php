@@ -1,6 +1,6 @@
 <?php
 $siteName = 'Apache HTTP Web Server';
-$siteVersion = '1.0.0';
+$siteVersion = '1.0.2';
 
 // HTTP response codes: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 http_response_code(200);
@@ -48,5 +48,7 @@ header("Version: $siteVersion");
     <h3><?= (new DateTime())->format("M j, Y"); ?></h3>
 
     <p><a href="/secure">Access Secure Page</a>, username: root, password: root</p>
+
+    <p><a href="/json">Get JSON data</a></p>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Apache HTTP Web Server with PHP
 
-Samples include `header()` commands, Basic authentication scheme, `.htaccess` settings
+Samples include `header()` commands, Basic authentication scheme, `.htaccess` settings, JSON response
 
 
 # Deployment on shared hosting
