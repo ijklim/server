@@ -1,0 +1,5 @@
+# Forbid directory viewing
+Options -Indexes
+
+# 404 Not Found
+ErrorDocument 404 /404.html
