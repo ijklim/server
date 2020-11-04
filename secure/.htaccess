@@ -1,0 +1,26 @@
+# Forbid directory viewing
+Options -Indexes
+
+# Password protect current folder
+# Ref: https://serverfault.com/questions/231766/returning-200-ok-in-apache-on-http-options-requests
+AuthType Basic
+AuthName "Secure Folder"
+AuthUserFile /home/ijklim/public_html__server/secure/.htpasswd
+# Do not require authentication if method is OPTIONS
+<LimitExcept OPTIONS>
+  require valid-user
+</LimitExcept>
+
+# Forward OPTIONS request to a page that returns 200 OK
+RewriteEngine On
+RewriteCond %{REQUEST_METHOD} OPTIONS
+RewriteRule ^(.*)$ options.html [QSA,L]
+
+# HTTP Headers
+# FilesMatch syntax: https://www.askapache.com/htaccess/using-filesmatch-and-files-in-htaccess/
+<IfModule mod_headers.c>
+  <FilesMatch "(.)*$">
+    Header always set Access-Control-Allow-Origin: "*"
+    Header always set Vary: Accept-Encoding
+  </FilesMatch>
+</IfModule>

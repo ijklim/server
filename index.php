@@ -46,5 +46,7 @@ header("Version: $siteVersion");
     <h1><?= "$siteName v.$siteVersion" ?></h1>
 
     <h3><?= (new DateTime())->format("M j, Y"); ?></h3>
+
+    <p><a href="/secure">Access Secure Page</a>, username: root, password: root</p>
 </body>
 </html>
